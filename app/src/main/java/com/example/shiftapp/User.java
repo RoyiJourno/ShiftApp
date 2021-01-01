@@ -2,6 +2,7 @@ package com.example.shiftapp;
 
 public class User {
 
+    // this is the first name
     private String fullName;
     private String phone;
     private Boolean Manger;
