@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Add Shift"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/insertDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="insert date.."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/insertStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="insert start time..."
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/insertDate"
+        app:layout_constraintTop_toBottomOf="@+id/insertDate" />
+
+    <EditText
+        android:id="@+id/insertExitTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="insert exit time..."
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/insertStartTime"
+        app:layout_constraintTop_toBottomOf="@+id/insertStartTime" />
+
+    <EditText
+        android:id="@+id/insertTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="insert total time..."
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/insertExitTime"
+        app:layout_constraintTop_toBottomOf="@+id/insertExitTime" />
+
+    <Button
+        android:id="@+id/btnAddShiftToDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:text="Add shift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertTotalTime" />
+</androidx.constraintlayout.widget.ConstraintLayout>

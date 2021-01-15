@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void updateUI(FirebaseUser user) {
         if(user != null){
-            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+            startActivity(new Intent(MainActivity.this,WelcomeActivtiy.class));
         }
     }
 

@@ -1,7 +1,9 @@
 package com.example.shiftapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,19 +70,14 @@ public class HomeActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
-                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                logOutUser();
             }
         });
 
         btnAddPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(user.getManger()) {
-                    startActivity(new Intent(HomeActivity.this, AddPlaceActivity.class));
-                }else{
-                    Toast.makeText(getApplicationContext(),"You are not Manager!!!",Toast.LENGTH_LONG).show();
-                }
+                startActivity(new Intent(HomeActivity.this, WorkPlaceActivity.class));
             }
         });
 
@@ -101,9 +98,35 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.btnShifts).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,ShiftsActivity.class));
+                startActivity(new Intent(HomeActivity.this,ListViewUserWorkPlace.class));
             }
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        logOutUser();
+    }
+
+    private void logOutUser() {
+        new AlertDialog.Builder(HomeActivity.this)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        mAuth.signOut();
+                        startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+   }
 }

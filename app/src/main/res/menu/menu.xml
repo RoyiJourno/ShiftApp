@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:icon="@drawable/icon" android:id="@+id/profile" android:title="profile"/>
+    <item android:icon="@drawable/icon" android:id="@+id/setting" android:title="setting"/>
+    <item android:icon="@drawable/icon" android:id="@+id/setting1" android:title="setting1"/>
+    <item android:icon="@drawable/icon" android:id="@+id/logout"  android:title="logout"/>
+
+</menu>

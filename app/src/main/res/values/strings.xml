@@ -6,4 +6,8 @@
     <string name="insert_Repassword">Insert Repassword</string>
     <string name="insert_phone_number">Insert Phone Number</string>
     <string name="insert_full_name">Insert Full Name...</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
